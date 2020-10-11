@@ -67,7 +67,8 @@ uint32_t processQwerty(bool lookup) {
     // P( LNO | LA,               SEND(KC_LSFT));
     P( LA | LO,                   SEND(KC_LSFT));
     P( LNO | LA,                  SEND(KC_LCTL));
-    P( LA,                        SEND(KC_LGUI));
+    P( LO,                        SEND(KC_LGUI));
+    P( RE,                        SEND(KC_LALT));
     // P( RE | RU,                SEND(KC_LGUI)); SEND(KC_LCTL); SEND(KC_LSFT);
     // P( RU | RNO,               SEND(KC_LGUI)); SEND(KC_LCTL);
     // P( RE,                     SEND(KC_LGUI); SEND(KC_LSFT));
@@ -131,17 +132,15 @@ uint32_t processQwerty(bool lookup) {
     P( RNO | LA,     SEND(KC_5));
 
     // Specials
-    P( RU | RNO,    SEND(KC_TAB));
-    P( RU,          SEND(KC_LALT));
+    P( RZ,          SEND(KC_TAB));
     P( RE | RU,     SEND(KC_ESC));
-    // P( RD | RZ,     SEND(KC_ENT));
+    P( RD | RZ,     SEND(KC_ENT));
     // P( RE,          SEND(KC_ENT));
     P( RD,          SEND(KC_BSPC));
     P( LNO,         SEND(KC_BSPC));
     P( RNO,         SEND(KC_BSPC));
-    P( LO,          SEND(KC_SPC));
-    P( RE,          SEND(KC_SPC));
-    P( RZ,          SEND(KC_ESC));
+    P( LA,          SEND(KC_SPC));
+    P( RU,          SEND(KC_SPC));
 
     // Symbols and Numbers
     P( PWR | RE | RU,      SEND(KC_ENT));
